@@ -11,7 +11,7 @@ import dttools
 
 def get_data_uf_ano_mes(uf, ano, mes):
   url = f"ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RD{uf}{ano}{mes}.dbc"
-  path = f"../../../../Users/gm.oliveira@unesp.br/DataSUS/data/dbc/RD{uf}{ano}{mes}.dbc"
+  path = f"/Users/gm.oliveira@unesp.br/DataSUS/data/dbc/RD{uf}{ano}{mes}.dbc"
 
   resp = urllib.request.urlretrieve(url, path)
 
