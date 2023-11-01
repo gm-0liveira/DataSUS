@@ -11,7 +11,7 @@ import dttools
 
 def get_data_uf_ano_mes(uf, ano, mes):
   url = f"ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RD{uf}{ano}{mes}.dbc"
-  path = f"../data/dbc/RD{uf}{ano}{mes}.dbc"
+  path = f"../../../../Users/gm.oliveira@unesp.br/DataSUS/data/dbc/RD{uf}{ano}{mes}.dbc"
 
   resp = urllib.request.urlretrieve(url, path)
 
@@ -24,8 +24,8 @@ def get_data_uf(uf, datas):
 ufs = ['RO', 'AC', 'AM', 'RR', 'PA', 'AP', 'TO', 'MA', 'PI', 'CE', 'RN', 'PB', 'PE', 'AL', 'SE',
        'BA', 'MG', 'ES', 'RJ', 'SP', 'PR', 'SC', 'RS', 'MS', 'MT', 'GO', 'DF']
 
-dt_start = '2022-01-01'
-dt_stop = '2023-05-01'
+dt_start = dbutils.widgets.get('dt_start')
+dt_stop = dbutils.widgets.get('dt_stop')
 
 datas = dttools.date_range(dt_start, dt_stop, monthly=True)
 to_download = [(uf, datas) for uf in ufs]
